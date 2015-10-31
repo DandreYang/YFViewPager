@@ -4,6 +4,7 @@
 //
 //  Created by Saxue on 15/10/31.
 //  Copyright © 2015年 Saxue. All rights reserved.
+//  Download https://github.com/saxueyang/YFViewPager
 //
 
 #import <UIKit/UIKit.h>
