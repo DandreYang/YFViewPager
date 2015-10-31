@@ -36,7 +36,7 @@
     _tableView = [self getTableView];
     _collectionView = [self getCollectionView];
     _webView = [[UIWebView alloc] init];
-    [_webView loadRequest:[NSURLRequest requestWithURL:[[NSURL alloc] initWithString:@"http://yangfeng.pw"]]];
+    [_webView loadRequest:[NSURLRequest requestWithURL:[[NSURL alloc] initWithString:@"https://www.baidu.com"]]];
     
     _tableView.rowHeight = 80;
     [_collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"CollectionViewCell"];
