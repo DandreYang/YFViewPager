@@ -2,7 +2,7 @@
 //  AppDelegate.m
 //  YFViewPager
 //
-//  Created by 杨枫 on 15/10/31.
+//  Created by Saxue on 15/10/31.
 //  Copyright © 2015年 Saxue. All rights reserved.
 //
 

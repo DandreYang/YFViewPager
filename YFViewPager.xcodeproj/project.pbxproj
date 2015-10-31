@@ -13,26 +13,20 @@
 		04DEA7641BE483B80089E40C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04DEA7621BE483B80089E40C /* Main.storyboard */; };
 		04DEA7661BE483B80089E40C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04DEA7651BE483B80089E40C /* Assets.xcassets */; };
 		04DEA7691BE483B80089E40C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04DEA7671BE483B80089E40C /* LaunchScreen.storyboard */; };
-		04DEA7741BE483B80089E40C /* YFViewPagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DEA7731BE483B80089E40C /* YFViewPagerTests.m */; };
-		04DEA77F1BE483B80089E40C /* YFViewPagerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DEA77E1BE483B80089E40C /* YFViewPagerUITests.m */; };
+		04DEA78F1BE483EC0089E40C /* YFViewPager.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DEA78E1BE483EC0089E40C /* YFViewPager.m */; };
+		04DEA7961BE4958E0089E40C /* issueTree.png in Resources */ = {isa = PBXBuildFile; fileRef = 04DEA7901BE4958E0089E40C /* issueTree.png */; };
+		04DEA7971BE4958E0089E40C /* issueTree@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04DEA7911BE4958E0089E40C /* issueTree@2x.png */; };
+		04DEA7981BE4958E0089E40C /* issueTree@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04DEA7921BE4958E0089E40C /* issueTree@3x.png */; };
+		04DEA7991BE4958E0089E40C /* later_in-tne_chat.png in Resources */ = {isa = PBXBuildFile; fileRef = 04DEA7931BE4958E0089E40C /* later_in-tne_chat.png */; };
+		04DEA79A1BE4958E0089E40C /* later_in-tne_chat@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04DEA7941BE4958E0089E40C /* later_in-tne_chat@2x.png */; };
+		04DEA79B1BE4958E0089E40C /* later_in-tne_chat@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04DEA7951BE4958E0089E40C /* later_in-tne_chat@3x.png */; };
+		04DEA79F1BE4959B0089E40C /* hollow_out_star_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 04DEA79C1BE4959B0089E40C /* hollow_out_star_blue.png */; };
+		04DEA7A01BE4959B0089E40C /* hollow_out_star_blue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04DEA79D1BE4959B0089E40C /* hollow_out_star_blue@2x.png */; };
+		04DEA7A11BE4959B0089E40C /* hollow_out_star_blue@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04DEA79E1BE4959B0089E40C /* hollow_out_star_blue@3x.png */; };
+		04DEA7A51BE495AE0089E40C /* my_headportrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 04DEA7A21BE495AE0089E40C /* my_headportrait.png */; };
+		04DEA7A61BE495AE0089E40C /* my_headportrait@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04DEA7A31BE495AE0089E40C /* my_headportrait@2x.png */; };
+		04DEA7A71BE495AE0089E40C /* my_headportrait@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04DEA7A41BE495AE0089E40C /* my_headportrait@3x.png */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		04DEA7701BE483B80089E40C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 04DEA74E1BE483B80089E40C /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 04DEA7551BE483B80089E40C;
-			remoteInfo = YFViewPager;
-		};
-		04DEA77B1BE483B80089E40C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 04DEA74E1BE483B80089E40C /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 04DEA7551BE483B80089E40C;
-			remoteInfo = YFViewPager;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		04DEA7561BE483B80089E40C /* YFViewPager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YFViewPager.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,30 +39,24 @@
 		04DEA7651BE483B80089E40C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04DEA7681BE483B80089E40C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04DEA76A1BE483B80089E40C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		04DEA76F1BE483B80089E40C /* YFViewPagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YFViewPagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		04DEA7731BE483B80089E40C /* YFViewPagerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YFViewPagerTests.m; sourceTree = "<group>"; };
-		04DEA7751BE483B80089E40C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		04DEA77A1BE483B80089E40C /* YFViewPagerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YFViewPagerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		04DEA77E1BE483B80089E40C /* YFViewPagerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YFViewPagerUITests.m; sourceTree = "<group>"; };
-		04DEA7801BE483B80089E40C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04DEA78D1BE483EC0089E40C /* YFViewPager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFViewPager.h; sourceTree = "<group>"; };
+		04DEA78E1BE483EC0089E40C /* YFViewPager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFViewPager.m; sourceTree = "<group>"; };
+		04DEA7901BE4958E0089E40C /* issueTree.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = issueTree.png; sourceTree = "<group>"; };
+		04DEA7911BE4958E0089E40C /* issueTree@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "issueTree@2x.png"; sourceTree = "<group>"; };
+		04DEA7921BE4958E0089E40C /* issueTree@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "issueTree@3x.png"; sourceTree = "<group>"; };
+		04DEA7931BE4958E0089E40C /* later_in-tne_chat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "later_in-tne_chat.png"; sourceTree = "<group>"; };
+		04DEA7941BE4958E0089E40C /* later_in-tne_chat@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "later_in-tne_chat@2x.png"; sourceTree = "<group>"; };
+		04DEA7951BE4958E0089E40C /* later_in-tne_chat@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "later_in-tne_chat@3x.png"; sourceTree = "<group>"; };
+		04DEA79C1BE4959B0089E40C /* hollow_out_star_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hollow_out_star_blue.png; sourceTree = "<group>"; };
+		04DEA79D1BE4959B0089E40C /* hollow_out_star_blue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hollow_out_star_blue@2x.png"; sourceTree = "<group>"; };
+		04DEA79E1BE4959B0089E40C /* hollow_out_star_blue@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hollow_out_star_blue@3x.png"; sourceTree = "<group>"; };
+		04DEA7A21BE495AE0089E40C /* my_headportrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = my_headportrait.png; sourceTree = "<group>"; };
+		04DEA7A31BE495AE0089E40C /* my_headportrait@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "my_headportrait@2x.png"; sourceTree = "<group>"; };
+		04DEA7A41BE495AE0089E40C /* my_headportrait@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "my_headportrait@3x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		04DEA7531BE483B80089E40C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		04DEA76C1BE483B80089E40C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		04DEA7771BE483B80089E40C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -82,8 +70,6 @@
 			isa = PBXGroup;
 			children = (
 				04DEA7581BE483B80089E40C /* YFViewPager */,
-				04DEA7721BE483B80089E40C /* YFViewPagerTests */,
-				04DEA77D1BE483B80089E40C /* YFViewPagerUITests */,
 				04DEA7571BE483B80089E40C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -92,8 +78,6 @@
 			isa = PBXGroup;
 			children = (
 				04DEA7561BE483B80089E40C /* YFViewPager.app */,
-				04DEA76F1BE483B80089E40C /* YFViewPagerTests.xctest */,
-				04DEA77A1BE483B80089E40C /* YFViewPagerUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -101,14 +85,9 @@
 		04DEA7581BE483B80089E40C /* YFViewPager */ = {
 			isa = PBXGroup;
 			children = (
-				04DEA75C1BE483B80089E40C /* AppDelegate.h */,
-				04DEA75D1BE483B80089E40C /* AppDelegate.m */,
+				04DEA78C1BE483EC0089E40C /* YFViewPager */,
 				04DEA75F1BE483B80089E40C /* ViewController.h */,
 				04DEA7601BE483B80089E40C /* ViewController.m */,
-				04DEA7621BE483B80089E40C /* Main.storyboard */,
-				04DEA7651BE483B80089E40C /* Assets.xcassets */,
-				04DEA7671BE483B80089E40C /* LaunchScreen.storyboard */,
-				04DEA76A1BE483B80089E40C /* Info.plist */,
 				04DEA7591BE483B80089E40C /* Supporting Files */,
 			);
 			path = YFViewPager;
@@ -117,27 +96,44 @@
 		04DEA7591BE483B80089E40C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				04DEA7A81BE4A7220089E40C /* images */,
+				04DEA75C1BE483B80089E40C /* AppDelegate.h */,
+				04DEA75D1BE483B80089E40C /* AppDelegate.m */,
+				04DEA7621BE483B80089E40C /* Main.storyboard */,
+				04DEA7651BE483B80089E40C /* Assets.xcassets */,
+				04DEA76A1BE483B80089E40C /* Info.plist */,
+				04DEA7671BE483B80089E40C /* LaunchScreen.storyboard */,
 				04DEA75A1BE483B80089E40C /* main.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		04DEA7721BE483B80089E40C /* YFViewPagerTests */ = {
+		04DEA78C1BE483EC0089E40C /* YFViewPager */ = {
 			isa = PBXGroup;
 			children = (
-				04DEA7731BE483B80089E40C /* YFViewPagerTests.m */,
-				04DEA7751BE483B80089E40C /* Info.plist */,
+				04DEA78D1BE483EC0089E40C /* YFViewPager.h */,
+				04DEA78E1BE483EC0089E40C /* YFViewPager.m */,
 			);
-			path = YFViewPagerTests;
+			path = YFViewPager;
 			sourceTree = "<group>";
 		};
-		04DEA77D1BE483B80089E40C /* YFViewPagerUITests */ = {
+		04DEA7A81BE4A7220089E40C /* images */ = {
 			isa = PBXGroup;
 			children = (
-				04DEA77E1BE483B80089E40C /* YFViewPagerUITests.m */,
-				04DEA7801BE483B80089E40C /* Info.plist */,
+				04DEA7A21BE495AE0089E40C /* my_headportrait.png */,
+				04DEA7A31BE495AE0089E40C /* my_headportrait@2x.png */,
+				04DEA7A41BE495AE0089E40C /* my_headportrait@3x.png */,
+				04DEA79C1BE4959B0089E40C /* hollow_out_star_blue.png */,
+				04DEA79D1BE4959B0089E40C /* hollow_out_star_blue@2x.png */,
+				04DEA79E1BE4959B0089E40C /* hollow_out_star_blue@3x.png */,
+				04DEA7901BE4958E0089E40C /* issueTree.png */,
+				04DEA7911BE4958E0089E40C /* issueTree@2x.png */,
+				04DEA7921BE4958E0089E40C /* issueTree@3x.png */,
+				04DEA7931BE4958E0089E40C /* later_in-tne_chat.png */,
+				04DEA7941BE4958E0089E40C /* later_in-tne_chat@2x.png */,
+				04DEA7951BE4958E0089E40C /* later_in-tne_chat@3x.png */,
 			);
-			path = YFViewPagerUITests;
+			name = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,42 +156,6 @@
 			productReference = 04DEA7561BE483B80089E40C /* YFViewPager.app */;
 			productType = "com.apple.product-type.application";
 		};
-		04DEA76E1BE483B80089E40C /* YFViewPagerTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 04DEA7861BE483B80089E40C /* Build configuration list for PBXNativeTarget "YFViewPagerTests" */;
-			buildPhases = (
-				04DEA76B1BE483B80089E40C /* Sources */,
-				04DEA76C1BE483B80089E40C /* Frameworks */,
-				04DEA76D1BE483B80089E40C /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				04DEA7711BE483B80089E40C /* PBXTargetDependency */,
-			);
-			name = YFViewPagerTests;
-			productName = YFViewPagerTests;
-			productReference = 04DEA76F1BE483B80089E40C /* YFViewPagerTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		04DEA7791BE483B80089E40C /* YFViewPagerUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 04DEA7891BE483B80089E40C /* Build configuration list for PBXNativeTarget "YFViewPagerUITests" */;
-			buildPhases = (
-				04DEA7761BE483B80089E40C /* Sources */,
-				04DEA7771BE483B80089E40C /* Frameworks */,
-				04DEA7781BE483B80089E40C /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				04DEA77C1BE483B80089E40C /* PBXTargetDependency */,
-			);
-			name = YFViewPagerUITests;
-			productName = YFViewPagerUITests;
-			productReference = 04DEA77A1BE483B80089E40C /* YFViewPagerUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -207,14 +167,6 @@
 				TargetAttributes = {
 					04DEA7551BE483B80089E40C = {
 						CreatedOnToolsVersion = 7.1;
-					};
-					04DEA76E1BE483B80089E40C = {
-						CreatedOnToolsVersion = 7.1;
-						TestTargetID = 04DEA7551BE483B80089E40C;
-					};
-					04DEA7791BE483B80089E40C = {
-						CreatedOnToolsVersion = 7.1;
-						TestTargetID = 04DEA7551BE483B80089E40C;
 					};
 				};
 			};
@@ -232,8 +184,6 @@
 			projectRoot = "";
 			targets = (
 				04DEA7551BE483B80089E40C /* YFViewPager */,
-				04DEA76E1BE483B80089E40C /* YFViewPagerTests */,
-				04DEA7791BE483B80089E40C /* YFViewPagerUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -243,23 +193,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04DEA7A51BE495AE0089E40C /* my_headportrait.png in Resources */,
 				04DEA7691BE483B80089E40C /* LaunchScreen.storyboard in Resources */,
+				04DEA7961BE4958E0089E40C /* issueTree.png in Resources */,
+				04DEA7971BE4958E0089E40C /* issueTree@2x.png in Resources */,
+				04DEA7A71BE495AE0089E40C /* my_headportrait@3x.png in Resources */,
+				04DEA7991BE4958E0089E40C /* later_in-tne_chat.png in Resources */,
 				04DEA7661BE483B80089E40C /* Assets.xcassets in Resources */,
+				04DEA7A11BE4959B0089E40C /* hollow_out_star_blue@3x.png in Resources */,
+				04DEA79F1BE4959B0089E40C /* hollow_out_star_blue.png in Resources */,
+				04DEA7A01BE4959B0089E40C /* hollow_out_star_blue@2x.png in Resources */,
 				04DEA7641BE483B80089E40C /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		04DEA76D1BE483B80089E40C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		04DEA7781BE483B80089E40C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				04DEA79B1BE4958E0089E40C /* later_in-tne_chat@3x.png in Resources */,
+				04DEA79A1BE4958E0089E40C /* later_in-tne_chat@2x.png in Resources */,
+				04DEA7981BE4958E0089E40C /* issueTree@3x.png in Resources */,
+				04DEA7A61BE495AE0089E40C /* my_headportrait@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,41 +219,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				04DEA7611BE483B80089E40C /* ViewController.m in Sources */,
+				04DEA78F1BE483EC0089E40C /* YFViewPager.m in Sources */,
 				04DEA75E1BE483B80089E40C /* AppDelegate.m in Sources */,
 				04DEA75B1BE483B80089E40C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		04DEA76B1BE483B80089E40C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				04DEA7741BE483B80089E40C /* YFViewPagerTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		04DEA7761BE483B80089E40C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				04DEA77F1BE483B80089E40C /* YFViewPagerUITests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		04DEA7711BE483B80089E40C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 04DEA7551BE483B80089E40C /* YFViewPager */;
-			targetProxy = 04DEA7701BE483B80089E40C /* PBXContainerItemProxy */;
-		};
-		04DEA77C1BE483B80089E40C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 04DEA7551BE483B80089E40C /* YFViewPager */;
-			targetProxy = 04DEA77B1BE483B80089E40C /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		04DEA7621BE483B80089E40C /* Main.storyboard */ = {
@@ -414,6 +334,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = YFViewPager/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Saxue.YFViewPager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -425,57 +346,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = YFViewPager/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Saxue.YFViewPager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		04DEA7871BE483B80089E40C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = YFViewPagerTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Saxue.YFViewPagerTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YFViewPager.app/YFViewPager";
-			};
-			name = Debug;
-		};
-		04DEA7881BE483B80089E40C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = YFViewPagerTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Saxue.YFViewPagerTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YFViewPager.app/YFViewPager";
-			};
-			name = Release;
-		};
-		04DEA78A1BE483B80089E40C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = YFViewPagerUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Saxue.YFViewPagerUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = YFViewPager;
-				USES_XCTRUNNER = YES;
-			};
-			name = Debug;
-		};
-		04DEA78B1BE483B80089E40C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = YFViewPagerUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Saxue.YFViewPagerUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = YFViewPager;
-				USES_XCTRUNNER = YES;
 			};
 			name = Release;
 		};
@@ -496,22 +370,6 @@
 			buildConfigurations = (
 				04DEA7841BE483B80089E40C /* Debug */,
 				04DEA7851BE483B80089E40C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-		};
-		04DEA7861BE483B80089E40C /* Build configuration list for PBXNativeTarget "YFViewPagerTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				04DEA7871BE483B80089E40C /* Debug */,
-				04DEA7881BE483B80089E40C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-		};
-		04DEA7891BE483B80089E40C /* Build configuration list for PBXNativeTarget "YFViewPagerUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				04DEA78A1BE483B80089E40C /* Debug */,
-				04DEA78B1BE483B80089E40C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
