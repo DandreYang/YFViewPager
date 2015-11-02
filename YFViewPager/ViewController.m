@@ -78,6 +78,30 @@
     
     // 此方法用于给菜单标题右上角小红点赋值，可动态调用
     [_viewPager setTipsCountArray:@[@100,@8,@0]];
+    
+    // 点击菜单时触发
+    [_viewPager didSelectedBlock:^(id viewPager, NSInteger index) {
+        switch (index) {
+            case 0:     // 点击第一个菜单
+            {
+                
+            }
+                break;
+            case 1:     // 点击第二个菜单
+            {
+                
+            }
+                break;
+            case 2:     // 点击第三个菜单
+            {
+                
+            }
+                break;
+                
+            default:
+                break;
+        }
+    }];
 }
 
 #pragma mark - 获取TableView
