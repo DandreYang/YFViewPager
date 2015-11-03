@@ -1,5 +1,6 @@
 # YFViewPager
 一个类似于安卓ViewPager的开源库
+<img src="https://github.com/saxueyang/YFViewPager/blob/master/Screen%20Shot.png?raw=true">
 
 # 相关属性
 <pre>
@@ -53,7 +54,7 @@
 </pre>
 # 相关方法
 #pragma mark - version 1.0
-<code>
+<pre>
 /**
  *  初始化 YFViewPager的方法
  *
@@ -80,10 +81,10 @@
  *  @param block 返回YFViewPager本身和点击的按钮的索引值,从左到右一次是0,1,2,3...
  */
 - (void)didSelectedBlock:(SelectedBlock)block;
-</code>
+</pre>
 
 #pragma mark - version 2.0
-<code>
+<pre>
 /**
  *  初始化 YFViewPager的方法 也是目前使用的YFViewPager的唯一初始化api
  *
@@ -115,4 +116,4 @@
  *  @param tips 小红点上的文字
  */
 - (void)setTipsCountArray:(NSArray *)tips;
-</code>
+</pre>
