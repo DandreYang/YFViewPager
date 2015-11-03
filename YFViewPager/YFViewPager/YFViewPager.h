@@ -72,7 +72,7 @@ typedef void(^SelectedBlock)(id viewPager, NSInteger index);
 @property (nonatomic, assign) BOOL showAnimation;
 
 /**
- *  初始化 YFViewPager的方法 也是目前使用的YFViewPager的唯一初始化api
+ *  初始化 YFViewPager的方法
  *
  *  @param frame  frame
  *  @param titles 标题数组
@@ -101,7 +101,7 @@ typedef void(^SelectedBlock)(id viewPager, NSInteger index);
 #pragma mark - version 2.0
 
 /**
- *  初始化 YFViewPager的方法 也是目前使用的YFViewPager的唯一初始化api
+ *  初始化 YFViewPager的方法
  *
  *  @param frame  frame
  *  @param titles 标题数组
