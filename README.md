@@ -61,9 +61,10 @@
  *
  *  @return YFViewPager
  */
+<pre>
 - (id)initWithFrame:(CGRect)frame
              titles:(NSArray<NSString *> *)titles
-              views:(NSArray<__kindof UIView *> *)views;
+              views:(NSArray<__kindof UIView *> *)views;</pre>
 
 /**
  *  设置选择的菜单按钮
@@ -77,6 +78,7 @@
  *
  *  @param block 返回YFViewPager本身和点击的按钮的索引值,从左到右一次是0,1,2,3...
  */
+<br>
 <code>- (void)didSelectedBlock:(SelectedBlock)block;</code>
 
 #pragma mark - version 2.0
