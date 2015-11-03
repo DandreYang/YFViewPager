@@ -1,7 +1,7 @@
 # YFViewPager
 一个类似于安卓ViewPager的开源库
 
-# YFViewPager v1.0
+# 相关属性
 /**
  *  设置viewPager是否允许滚动 默认支持
  */
@@ -50,8 +50,10 @@
  */
 @property (nonatomic, assign) BOOL showAnimation;
 
+# 相关方法
+#pragma mark - version 1.0
 /**
- *  初始化 YFViewPager的方法 也是目前使用的YFViewPager的唯一初始化api
+ *  初始化 YFViewPager的方法
  *
  *  @param frame  frame
  *  @param titles 标题数组
@@ -75,7 +77,7 @@
  *
  *  @param block 返回YFViewPager本身和点击的按钮的索引值,从左到右一次是0,1,2,3...
  */
-- (void)didSelectedBlock:(SelectedBlock)block;
+<code>- (void)didSelectedBlock:(SelectedBlock)block;</code>
 
 #pragma mark - version 2.0
 
