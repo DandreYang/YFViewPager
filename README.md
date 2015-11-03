@@ -2,7 +2,7 @@
 一个类似于安卓ViewPager的开源库
 
 # 相关属性
-<code>
+<pre>
 /**
  *  设置viewPager是否允许滚动 默认支持
  */
@@ -50,7 +50,7 @@
  *  是否显示垂直分割线  默认显示
  */
 @property (nonatomic, assign) BOOL showAnimation;
-</code>
+</pre>
 # 相关方法
 #pragma mark - version 1.0
 <code>
