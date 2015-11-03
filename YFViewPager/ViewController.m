@@ -64,6 +64,7 @@
     [self.view addSubview:_viewPager];
     
 #pragma mark - YFViewPager 相关属性 方法
+//    _viewPager.enabledScroll = NO;
 //    _viewPager.showAnimation = NO;
 //    _viewPager.showBottomLine = NO;
 //    _viewPager.showVLine = NO;

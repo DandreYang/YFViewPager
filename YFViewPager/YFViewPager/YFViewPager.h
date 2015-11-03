@@ -24,6 +24,11 @@ typedef void(^SelectedBlock)(id viewPager, NSInteger index);
 @property (nonatomic, strong) UIView *pageControl;
 
 /**
+ *  设置viewPager是否允许滚动 默认支持
+ */
+@property (nonatomic, assign) BOOL   enabledScroll;
+
+/**
  *  当前选择的菜单索引
  */
 @property (nonatomic, assign) NSInteger selectIndex;

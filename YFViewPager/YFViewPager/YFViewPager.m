@@ -49,6 +49,7 @@
     _showAnimation = YES;
     _showBottomLine = YES;
     _showSelectedBottomLine = YES;
+    _enabledScroll = YES;
 }
 
 //视图重绘
@@ -114,7 +115,7 @@
         [button setTitle:_titleArray[i] forState:UIControlStateNormal];
         button.titleLabel.font = [UIFont systemFontOfSize:15];
         [button addTarget:self action:@selector(tabBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
-        
+
         //创建菜单右侧小图标
         if (_titleIconsArray.count) {
             [button setImage:_titleIconsArray[i] forState:UIControlStateNormal];
@@ -184,7 +185,11 @@
         _pageControl.hidden = YES;
     }
     
-    [_scrollView setContentSize:CGSizeMake(rect.size.width * _views.count + 1, rect.size.height - 2)];
+    if (_enabledScroll) {
+        [_scrollView setContentSize:CGSizeMake(rect.size.width * _views.count + 1, rect.size.height - 2)];
+    }else{
+        [_scrollView setContentSize:CGSizeZero];
+    }
     _scrollView.delegate = self;
     [self addSubview:_scrollView];
     [self addSubview:_pageControl];
