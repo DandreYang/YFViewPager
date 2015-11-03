@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		043C33DE1BE86B3F0032061C /* yfviewpager.gif in Resources */ = {isa = PBXBuildFile; fileRef = 043C33DD1BE86B3E0032061C /* yfviewpager.gif */; };
 		04DEA75B1BE483B80089E40C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DEA75A1BE483B80089E40C /* main.m */; };
 		04DEA75E1BE483B80089E40C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DEA75D1BE483B80089E40C /* AppDelegate.m */; };
 		04DEA7611BE483B80089E40C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DEA7601BE483B80089E40C /* ViewController.m */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		043C33DD1BE86B3E0032061C /* yfviewpager.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = yfviewpager.gif; sourceTree = "<group>"; };
 		04DEA7561BE483B80089E40C /* YFViewPager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YFViewPager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04DEA75A1BE483B80089E40C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		04DEA75C1BE483B80089E40C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 		04DEA7A81BE4A7220089E40C /* images */ = {
 			isa = PBXGroup;
 			children = (
+				043C33DD1BE86B3E0032061C /* yfviewpager.gif */,
 				04DEA7A21BE495AE0089E40C /* my_headportrait.png */,
 				04DEA7A31BE495AE0089E40C /* my_headportrait@2x.png */,
 				04DEA7A41BE495AE0089E40C /* my_headportrait@3x.png */,
@@ -205,6 +208,7 @@
 				04DEA7A01BE4959B0089E40C /* hollow_out_star_blue@2x.png in Resources */,
 				04DEA7641BE483B80089E40C /* Main.storyboard in Resources */,
 				04DEA79B1BE4958E0089E40C /* later_in-tne_chat@3x.png in Resources */,
+				043C33DE1BE86B3F0032061C /* yfviewpager.gif in Resources */,
 				04DEA79A1BE4958E0089E40C /* later_in-tne_chat@2x.png in Resources */,
 				04DEA7981BE4958E0089E40C /* issueTree@3x.png in Resources */,
 				04DEA7A61BE495AE0089E40C /* my_headportrait@2x.png in Resources */,
@@ -372,6 +376,7 @@
 				04DEA7851BE483B80089E40C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
