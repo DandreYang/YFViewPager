@@ -1,7 +1,7 @@
 # YFViewPager
 一个类似于安卓ViewPager的开源库
-<br>
-<img src="https://github.com/saxueyang/YFViewPager/blob/master/Screen%20Shot.png?raw=true" width="640">
+<br><br>
+<img src="https://github.com/saxueyang/YFViewPager/blob/master/Screen%20Shot.png?raw=true" style="width:640px; text-align:center; margin:0 auto;">
 
 # 相关属性
 <pre>
