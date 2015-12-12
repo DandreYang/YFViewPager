@@ -165,6 +165,7 @@
 		04DEA74E1BE483B80089E40C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = Saxue;
 				TargetAttributes = {

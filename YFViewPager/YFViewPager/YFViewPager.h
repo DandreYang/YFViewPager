@@ -12,13 +12,6 @@
 typedef void(^SelectedBlock)(id viewPager, NSInteger index);
 
 @interface YFViewPager : UIView<UIScrollViewDelegate>
-{
-    NSArray *_titleArray;           /**< 菜单标题 */
-    NSArray *_views;                /**< 视图 */
-    NSArray *_titleIconsArray;      /**< 菜单标题左侧的小图标 */
-    NSArray *_selectedIconsArray;   /**< 菜单被选中时左侧的小图标 */
-    NSArray *_tipsCountArray;       /**< 菜单右上角的小红点显示的数量 */
-}
 
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) UIView *pageControl;
