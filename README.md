@@ -61,13 +61,13 @@
  *
  *  @param frame  frame
  *  @param titles 标题数组
- *  @param views  视图数组 和标题数组一一对应
+ *  @param views  视图数组  视图数组 可以是views，也可以是controlers 和标题数组一一对应
  *
  *  @return YFViewPager
  */
 - (id)initWithFrame:(CGRect)frame
              titles:(NSArray<NSString *> *)titles
-              views:(NSArray<__kindof UIView *> *)views;
+              views:(NSArray *)views;
 
 /**
  *  设置选择的菜单按钮
@@ -93,7 +93,7 @@
  *  @param titles 标题数组
  *  @param icons 标题右侧图标数组
  *  @param selectedIcons 标题右侧选中时的图标数组
- *  @param views  视图数组 和标题数组一一对应
+ *  @param views  视图数组 可以是views，也可以是controlers 和标题数组一一对应
  *
  *  @return YFViewPager
  */
@@ -101,7 +101,7 @@
              titles:(NSArray<NSString *> *)titles
               icons:(NSArray<UIImage *> *)icons
       selectedIcons:(NSArray<UIImage *> *)selectedIcons
-              views:(NSArray<__kindof UIView *> *)views;
+              views:(NSArray *)views;
 
 /**
  *  设置菜单标题左边的icon 图标
