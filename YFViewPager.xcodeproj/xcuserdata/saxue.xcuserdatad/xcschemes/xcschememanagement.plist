@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>YFViewPager-Swift.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>YFViewPager.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -12,6 +17,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>04A854B41BEDD4D400501011</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>04DEA7551BE483B80089E40C</key>
 		<dict>
 			<key>primary</key>
@@ -23,6 +33,11 @@
 			<true/>
 		</dict>
 		<key>04DEA7791BE483B80089E40C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>04EE533C1BEDD65400C3541A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
