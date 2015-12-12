@@ -82,7 +82,7 @@ typedef void(^SelectedBlock)(id viewPager, NSInteger index);
  */
 - (id)initWithFrame:(CGRect)frame
              titles:(NSArray<NSString *> *)titles
-              views:(NSArray<__kindof UIView *> *)views;
+              views:(NSArray *)views;
 
 /**
  *  设置选择的菜单按钮
@@ -115,7 +115,7 @@ typedef void(^SelectedBlock)(id viewPager, NSInteger index);
              titles:(NSArray<NSString *> *)titles
               icons:(NSArray<UIImage *> *)icons
       selectedIcons:(NSArray<UIImage *> *)selectedIcons
-              views:(NSArray<__kindof UIView *> *)views;
+              views:(NSArray *)views;
 
 /**
  *  设置菜单标题左边的icon 图标
@@ -123,7 +123,8 @@ typedef void(^SelectedBlock)(id viewPager, NSInteger index);
  *  @param icons 图标image
  *  @param selectedIcons 菜单被选中时显示的图标image
  */
-- (void)setTitleIconsArray:(NSArray<UIImage *> *)icons selectedIconsArray:(NSArray<UIImage *> *)selectedIcons;
+- (void)setTitleIconsArray:(NSArray<UIImage *> *)icons
+        selectedIconsArray:(NSArray<UIImage *> *)selectedIcons;
 
 /**
  *  设置菜单右上角小红点显示的文字，数组需与菜单一一对应，数字为0时 赋值 @0或@""

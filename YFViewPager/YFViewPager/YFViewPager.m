@@ -23,7 +23,7 @@
 //初始化
 - (id)initWithFrame:(CGRect)frame
              titles:(NSArray<NSString *> *)titles
-              views:(NSArray<__kindof UIView *> *)views
+              views:(NSArray *)views
 {
     self = [super initWithFrame:frame];
     if (self) {
@@ -55,6 +55,9 @@
 //视图重绘
 - (void)drawRect:(CGRect)rect
 {
+    for (UIView * view in self.subviews) {
+        [view removeFromSuperview];
+    }
     // Drawing code
     _scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 2, rect.size.width, rect.size.height - 2)];
     _scrollView.userInteractionEnabled = YES;
@@ -96,7 +99,15 @@
     
     for (NSInteger i = 0; i < _views.count; i++) {
         //创建主视图
-        UIView * view = [_views objectAtIndex:i];
+        UIView * view;
+        
+        if ([_views[i] isKindOfClass:[UIViewController class]]) {
+            UIViewController *VC = _views[i];
+            view = VC.view;
+        }else{
+            view = [_views objectAtIndex:i];
+        }
+        
         frame.origin.x = rect.size.width * i;
         [view setFrame:frame];
         [_scrollView addSubview:view];
@@ -115,7 +126,7 @@
         [button setTitle:_titleArray[i] forState:UIControlStateNormal];
         button.titleLabel.font = [UIFont systemFontOfSize:15];
         [button addTarget:self action:@selector(tabBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
-
+        
         //创建菜单右侧小图标
         if (_titleIconsArray.count) {
             [button setImage:_titleIconsArray[i] forState:UIControlStateNormal];
@@ -137,7 +148,7 @@
 
         if (_tipsCountArray == nil || _tipsCountArray.count == 0) {
             circleLabel.hidden = YES;
-        }else if ([_tipsCountArray[i] integerValue] == 0){
+        }else if ([_tipsCountArray[i] integerValue] <= 0){
             circleLabel.hidden = YES;
         }else{
             circleLabel.hidden = NO;
@@ -193,6 +204,9 @@
     _scrollView.delegate = self;
     [self addSubview:_scrollView];
     [self addSubview:_pageControl];
+    
+    self.scrollView.contentOffset = CGPointMake(self.frame.size.width*self.selectIndex, 0);
+    [self setSelectIndex:self.selectIndex];
 }
 
 //按钮的点击事件
@@ -273,7 +287,7 @@
              titles:(NSArray<NSString *> *)titles
               icons:(NSArray<UIImage *> *)icons
       selectedIcons:(NSArray<UIImage *> *)selectedIcons
-              views:(NSArray<__kindof UIView *> *)views
+              views:(NSArray *)views
 {
     self = [super initWithFrame:frame];
     if (self) {
