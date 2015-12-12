@@ -69,7 +69,7 @@ typedef void(^SelectedBlock)(id viewPager, NSInteger index);
  *
  *  @param frame  frame
  *  @param titles 标题数组
- *  @param views  视图数组 和标题数组一一对应
+ *  @param views  视图数组 可以是views，也可以是controlers 和标题数组一一对应
  *
  *  @return YFViewPager
  */
@@ -100,7 +100,7 @@ typedef void(^SelectedBlock)(id viewPager, NSInteger index);
  *  @param titles 标题数组
  *  @param icons 标题右侧图标数组
  *  @param selectedIcons 标题右侧选中时的图标数组
- *  @param views  视图数组 和标题数组一一对应
+ *  @param views  视图数组 可以是views，也可以是controlers 和标题数组一一对应
  *
  *  @return YFViewPager
  */
