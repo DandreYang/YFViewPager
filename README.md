@@ -4,7 +4,7 @@
 <img src="https://github.com/saxueyang/YFViewPager/blob/master/Screen%20Shot.png?raw=true" width="414">
 <img src="https://github.com/saxueyang/YFViewPager/blob/master/YFViewPager/yfviewpager.gif?raw=true" width="414">
 # 相关属性
-<pre>
+```objc
 /**
  *  设置viewPager是否允许滚动 默认支持
  */
@@ -52,10 +52,10 @@
  *  是否显示垂直分割线  默认显示
  */
 @property (nonatomic, assign) BOOL showAnimation;
-</pre>
+```
 # 相关方法
 #pragma mark - version 1.0
-<pre>
+```objc
 /**
  *  初始化 YFViewPager的方法
  *
@@ -82,10 +82,10 @@
  *  @param block 返回YFViewPager本身和点击的按钮的索引值,从左到右一次是0,1,2,3...
  */
 - (void)didSelectedBlock:(SelectedBlock)block;
-</pre>
+```
 
 #pragma mark - version 2.0
-<pre>
+```objc
 /**
  *  初始化 YFViewPager的方法 也是目前使用的YFViewPager的唯一初始化api
  *
@@ -117,4 +117,4 @@
  *  @param tips 小红点上的文字
  */
 - (void)setTipsCountArray:(NSArray *)tips;
-</pre>
+```
