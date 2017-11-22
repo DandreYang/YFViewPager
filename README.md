@@ -118,3 +118,9 @@
  */
 - (void)setTipsCountArray:(NSArray *)tips;
 ```
+
+#pragma mark - Version 3.0 Add
+```objc
+@property (nonatomic, copy, readonly) NSString *selectTitle;
+@property (nonatomic, assign) YFViewPagerTipsCountShowType  tipsCountShowType;
+```
