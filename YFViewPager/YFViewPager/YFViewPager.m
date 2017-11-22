@@ -8,6 +8,12 @@
 
 #import "YFViewPager.h"
 
+#ifdef DEBUG
+#define DLog(s, ...) NSLog( @"<%p %@:(%d)> %@", self, [[NSString stringWithUTF8String:__FILE__] lastPathComponent], __LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__] )
+#else
+#define DLog(s, ...)
+#endif
+
 @interface YFViewPager ()
 {
     NSArray *_titleArray;           /**< 菜单标题 */
@@ -155,8 +161,10 @@
         
         if (_tipsCountShowType == YFViewPagerTipsCountShowTypeRedDot) {
             CGPoint center = circleLabel.center;
-            circleLabel.width = 6;
-            circleLabel.height = 6;
+            CGRect frame = circleLabel.frame;
+            frame.size.width = 6;
+            frame.size.height = 6;
+            circleLabel.frame = frame;
             circleLabel.text = @"";
             circleLabel.layer.cornerRadius = 3;
             circleLabel.center = center;
@@ -344,8 +352,10 @@
         
         if (_tipsCountShowType == YFViewPagerTipsCountShowTypeRedDot) {
             CGPoint center = circleLabel.center;
-            circleLabel.width = 6;
-            circleLabel.height = 6;
+            CGRect frame = circleLabel.frame;
+            frame.size.width = 6;
+            frame.size.height = 6;
+            circleLabel.frame = frame;
             circleLabel.text = @"";
             circleLabel.layer.cornerRadius = 3;
             circleLabel.center = center;
