@@ -2,12 +2,17 @@
 //  YFViewPager.h
 //  YFViewPager
 //
-//  Created by Saxue on 15/10/31.
-//  Copyright © 2015年 Saxue. All rights reserved.
-//  Download https://github.com/saxueyang/YFViewPager
+//  Created by Dandre on 15/10/31.
+//  Copyright © 2015年 Dandre. All rights reserved.
+//  Download https://github.com/DandreYang/YFViewPager
 //
 
 #import <UIKit/UIKit.h>
+
+typedef NS_ENUM(NSInteger, YFViewPagerTipsCountShowType) {
+    YFViewPagerTipsCountShowTypeNumber  = 0,    /**< 数字 */
+    YFViewPagerTipsCountShowTypeRedDot  = 1,    /**< 小红点 */
+};
 
 typedef void(^SelectedBlock)(id viewPager, NSInteger index);
 
@@ -64,6 +69,10 @@ typedef void(^SelectedBlock)(id viewPager, NSInteger index);
  */
 @property (nonatomic, assign) BOOL showAnimation;
 
+#pragma mark - Version 3.0 Add
+@property (nonatomic, copy, readonly) NSString *selectTitle;
+@property (nonatomic, assign) YFViewPagerTipsCountShowType  tipsCountShowType;
+
 /**
  *  初始化 YFViewPager的方法
  *
@@ -109,6 +118,7 @@ typedef void(^SelectedBlock)(id viewPager, NSInteger index);
               icons:(NSArray<UIImage *> *)icons
       selectedIcons:(NSArray<UIImage *> *)selectedIcons
               views:(NSArray *)views;
+
 
 /**
  *  设置菜单标题左边的icon 图标

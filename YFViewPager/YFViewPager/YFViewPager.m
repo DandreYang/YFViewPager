@@ -2,17 +2,11 @@
 //  YFViewPager.m
 //  YFViewPager
 //
-//  Created by Saxue on 15/10/31.
-//  Copyright © 2015年 Saxue. All rights reserved.
+//  Created by Dandre on 15/10/31.
+//  Copyright © 2015年 Dandre. All rights reserved.
 //
 
 #import "YFViewPager.h"
-
-#ifdef DEBUG
-#define DLog(s, ...) NSLog( @"<%p %@:(%d)> %@", self, [[NSString stringWithUTF8String:__FILE__] lastPathComponent], __LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__] )
-#else
-#define DLog(s, ...)
-#endif
 
 @interface YFViewPager ()
 {
@@ -92,7 +86,7 @@
     label.backgroundColor = _tabArrowBgColor;
     label.tag = 200;
     
-    UILabel *selectedLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, _pageControl.frame.size.height -3, _pageControl.frame.size.width/_pageNum, 3)];
+    UILabel *selectedLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 2+_pageControl.frame.size.height -3, _pageControl.frame.size.width/_pageNum, 1)];
     selectedLabel.backgroundColor = _tabSelectedArrowBgColor;
     selectedLabel.tag = 300;
     
@@ -107,7 +101,8 @@
         selectedFrame.size.height = 0;
         selectedLabel.frame = selectedFrame;
     }
-    
+#pragma mark - Modify By Dandre @2016.05.02 增加支持controller
+    UIViewController *superVC = [self getViewControllerOfView:self];
     for (NSInteger i = 0; i < _views.count; i++) {
         //创建主视图
         UIView * view;
@@ -115,6 +110,7 @@
         if ([_views[i] isKindOfClass:[UIViewController class]]) {
             UIViewController *VC = _views[i];
             view = VC.view;
+            [superVC addChildViewController:VC];
         }else{
             view = [_views objectAtIndex:i];
         }
@@ -156,23 +152,25 @@
         circleLabel.layer.cornerRadius = 8;
         circleLabel.layer.masksToBounds = YES;
         circleLabel.clipsToBounds = YES;
+        
+        if (_tipsCountShowType == YFViewPagerTipsCountShowTypeRedDot) {
+            CGPoint center = circleLabel.center;
+            circleLabel.width = 6;
+            circleLabel.height = 6;
+            circleLabel.text = @"";
+            circleLabel.layer.cornerRadius = 3;
+            circleLabel.center = center;
+        }
 
+        circleLabel.tag = 0x2016+i;
+        
         if (_tipsCountArray == nil || _tipsCountArray.count == 0) {
             circleLabel.hidden = YES;
         }else if ([_tipsCountArray[i] integerValue] <= 0){
             circleLabel.hidden = YES;
         }else{
             circleLabel.hidden = NO;
-            circleLabel.text = [_tipsCountArray[i] integerValue]>99?@"99+":[NSString stringWithFormat:@"%@",_tipsCountArray[i]];
-            CGPoint center = circleLabel.center;
-            
-            CGRect cFrame = circleLabel.frame;
-            cFrame.size.width = [self getLabelWidth:circleLabel.text fontSize:12]+6>16?[self getLabelWidth:circleLabel.text fontSize:12]+6:16;
-            
-            circleLabel.frame = cFrame;
-            circleLabel.center = center;
         }
-        
         
         if (_showVLine) {
             //创建中间分割线
@@ -240,10 +238,10 @@
 //设置选择的按钮索引 触发的方法
 - (void)setSelectIndex:(NSInteger)index
 {
+    _selectIndex = index;
     if(_block){
         _block(self,index);
     }
-    _selectIndex = index;
     for (NSInteger i = 0; i<_pageNum; i++) {
         UIButton *btn = (UIButton *)[self viewWithTag:i + 100];
         btn.backgroundColor = _tabBgColor;
@@ -325,6 +323,63 @@
 - (void)setTipsCountArray:(NSArray *)tips
 {
     _tipsCountArray = tips;
-    [self setNeedsDisplay];
+    
+    for (NSInteger i=0; i<tips.count; i++) {
+        UILabel *circleLabel = [self viewWithTag:0x2016+i];
+        if (_tipsCountArray == nil || _tipsCountArray.count == 0) {
+            circleLabel.hidden = YES;
+        }else if ([_tipsCountArray[i] integerValue] <= 0){
+            circleLabel.hidden = YES;
+        }else{
+            circleLabel.hidden = NO;
+            circleLabel.text = [_tipsCountArray[i] integerValue]>99?@"99+":[NSString stringWithFormat:@"%@",_tipsCountArray[i]];
+            CGPoint center = circleLabel.center;
+            
+            CGRect cFrame = circleLabel.frame;
+            cFrame.size.width = [self getLabelWidth:circleLabel.text fontSize:12]+6>16?[self getLabelWidth:circleLabel.text fontSize:12]+6:16;
+            
+            circleLabel.frame = cFrame;
+            circleLabel.center = center;
+        }
+        
+        if (_tipsCountShowType == YFViewPagerTipsCountShowTypeRedDot) {
+            CGPoint center = circleLabel.center;
+            circleLabel.width = 6;
+            circleLabel.height = 6;
+            circleLabel.text = @"";
+            circleLabel.layer.cornerRadius = 3;
+            circleLabel.center = center;
+        }
+    }
 }
+
+- (void)setTipsCountShowType:(YFViewPagerTipsCountShowType)tipsCountShowType
+{
+    if (_tipsCountShowType != tipsCountShowType) {
+        _tipsCountShowType  = tipsCountShowType;
+        
+        [self setTipsCountArray:_tipsCountArray];
+    }
+}
+
+/**
+ * 获取指定view的viewController
+ */
+- (UIViewController *)getViewControllerOfView:(UIView *)view
+{
+    for (UIView* next = [view superview]; next; next = next.superview) {
+        UIResponder *nextResponder = [next nextResponder];
+        if ([nextResponder isKindOfClass:[UIViewController class]]) {
+            return (UIViewController *)nextResponder;
+        }
+    }
+    return nil;
+}
+
+#pragma mark - Version 3.0
+- (NSString *)selectTitle
+{
+    return [_titleArray objectAtIndex:self.selectIndex];
+}
+
 @end
