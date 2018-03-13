@@ -51,11 +51,11 @@
 {
     self.userInteractionEnabled = YES;
     _tabBgColor = [UIColor whiteColor];
-    _tabArrowBgColor = [UIColor colorWithRed:204/255.0 green:208/255.0 blue:210/255.0 alpha:1];
+    _bottomLineBgColor = [UIColor colorWithRed:204/255.0 green:208/255.0 blue:210/255.0 alpha:1];
     _tabTitleColor = [UIColor colorWithRed:12/255.0 green:134/255.0 blue:237/255.0 alpha:1];
     _tabSelectedBgColor = [UIColor whiteColor];
     _tabSelectedTitleColor = [UIColor colorWithRed:12/255.0 green:134/255.0 blue:237/255.0 alpha:1];
-    _tabSelectedArrowBgColor =[UIColor colorWithRed:12/255.0 green:134/255.0 blue:237/255.0 alpha:1];
+    _bottomLineSelectedBgColor =[UIColor colorWithRed:12/255.0 green:134/255.0 blue:237/255.0 alpha:1];
     _showVLine = YES;
     _showAnimation = YES;
     _showBottomLine = YES;
@@ -89,12 +89,44 @@
     
     //创建菜单按钮下划线
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0,  _pageControl.frame.size.height - 1, _pageControl.frame.size.width, 1)];
-    label.backgroundColor = _tabArrowBgColor;
+    label.backgroundColor = _bottomLineBgColor;
     label.tag = 200;
     
-    UILabel *selectedLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 2+_pageControl.frame.size.height -3, _pageControl.frame.size.width/_pageNum, 1)];
-    selectedLabel.backgroundColor = _tabSelectedArrowBgColor;
+    UILabel *selectedLabel = [[UILabel alloc] init];
+    selectedLabel.backgroundColor = _bottomLineSelectedBgColor;
     selectedLabel.tag = 300;
+    
+#pragma mark - 3.1 Add
+    
+    switch (_bottomLineType) {
+        case YFViewPagerBottomLineTypeHidden:
+        {
+            label.hidden = YES;
+            selectedLabel.hidden = YES;
+        }
+        break;
+        
+        case YFViewPagerBottomLineTypeFitItemContentWidth:
+        {
+            label.hidden = NO;
+            selectedLabel.hidden = NO;
+            label.frame = CGRectMake(0,  _pageControl.frame.size.height - 1, _pageControl.frame.size.width, 1);
+            
+            CGFloat selectedLabelWidth = [self getLabelWidth:[_titleArray firstObject] fontSize:15] + ((UIImage *)[_titleIconsArray firstObject]).size.width + 10;
+            selectedLabel.frame = CGRectMake(0, _pageControl.frame.size.height -1, selectedLabelWidth, 1);
+            selectedLabel.center = CGPointMake((_pageControl.frame.size.width/_pageNum)/2, _pageControl.frame.size.height -1.5);
+        }
+        break;
+        case YFViewPagerBottomLineTypeFullItemWidth:
+        default:
+        {
+            label.hidden = NO;
+            selectedLabel.hidden = NO;
+            label.frame = CGRectMake(0,  _pageControl.frame.size.height - 1, _pageControl.frame.size.width, 1);
+            selectedLabel.frame = CGRectMake(0, _pageControl.frame.size.height -1, _pageControl.frame.size.width/_pageNum, 1);
+        }
+            break;
+    }
     
     if (!_showBottomLine){
         CGRect labelFrame = label.frame;
@@ -107,6 +139,7 @@
         selectedFrame.size.height = 0;
         selectedLabel.frame = selectedFrame;
     }
+    
 #pragma mark - Modify By Dandre @2016.05.02 增加支持controller
     UIViewController *superVC = [self getViewControllerOfView:self];
     for (NSInteger i = 0; i < _views.count; i++) {
@@ -143,11 +176,13 @@
         //创建菜单右侧小图标
         if (_titleIconsArray.count) {
             [button setImage:_titleIconsArray[i] forState:UIControlStateNormal];
+            button.titleEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0);
         }
         if (_selectedIconsArray.count) {
             [button setImage:_selectedIconsArray[i] forState:UIControlStateSelected];
         }
         DLog(@"titleLabel.frame:x:%lf width:%lf height:%lf",button.titleLabel.frame.origin.x,button.titleLabel.frame.size.width,button.titleLabel.frame.size.height);
+        
         //创建菜单按钮右上角的小红点
         UILabel *circleLabel = [[UILabel alloc] initWithFrame:CGRectMake([self getLabelWidth:_titleArray[i] fontSize:15]/2+button.titleLabel.frame.origin.x, 2, 16, 16)];
         circleLabel.backgroundColor = [UIColor redColor];
@@ -158,6 +193,11 @@
         circleLabel.layer.cornerRadius = 8;
         circleLabel.layer.masksToBounds = YES;
         circleLabel.clipsToBounds = YES;
+        circleLabel.text = [_tipsCountArray[i] integerValue]>99?@"99+":[NSString stringWithFormat:@"%@",_tipsCountArray[i]];
+        CGRect cFrame = circleLabel.frame;
+        cFrame.size.width = [self getLabelWidth:circleLabel.text fontSize:12]+6>16?[self getLabelWidth:circleLabel.text fontSize:12]+6:16;
+        
+        circleLabel.frame = cFrame;
         
         if (_tipsCountShowType == YFViewPagerTipsCountShowTypeRedDot) {
             CGPoint center = circleLabel.center;
@@ -172,18 +212,16 @@
 
         circleLabel.tag = 0x2016+i;
         
-        if (_tipsCountArray == nil || _tipsCountArray.count == 0) {
-            circleLabel.hidden = YES;
-        }else if ([_tipsCountArray[i] integerValue] <= 0){
+        if (_tipsCountArray == nil || _tipsCountArray.count == 0 || [_tipsCountArray[i] integerValue] <= 0) {
             circleLabel.hidden = YES;
         }else{
             circleLabel.hidden = NO;
         }
         
+        //创建中间分割线
         if (_showVLine) {
-            //创建中间分割线
             UILabel *vlabel = [[UILabel alloc] initWithFrame:CGRectMake(-1, 10, 1, button.frame.size.height - 20)];
-            vlabel.backgroundColor = _tabArrowBgColor;
+            vlabel.backgroundColor = _bottomLineBgColor;
             [button addSubview:vlabel];
             
             if (!i) {
@@ -263,14 +301,10 @@
     
     if (_showAnimation) {
         [UIView animateWithDuration:0.3 animations:^{
-            CGRect frame = selectedLabel.frame;
-            frame.origin.x = button.frame.origin.x;
-            selectedLabel.frame = frame;
+            selectedLabel.center = CGPointMake(button.center.x, selectedLabel.center.y);
         }];
     }else{
-        CGRect frame = selectedLabel.frame;
-        frame.origin.x = button.frame.origin.x;
-        selectedLabel.frame = frame;
+        selectedLabel.center = CGPointMake(button.center.x, selectedLabel.center.y);
     }
 }
 
@@ -332,35 +366,7 @@
 {
     _tipsCountArray = tips;
     
-    for (NSInteger i=0; i<tips.count; i++) {
-        UILabel *circleLabel = [self viewWithTag:0x2016+i];
-        if (_tipsCountArray == nil || _tipsCountArray.count == 0) {
-            circleLabel.hidden = YES;
-        }else if ([_tipsCountArray[i] integerValue] <= 0){
-            circleLabel.hidden = YES;
-        }else{
-            circleLabel.hidden = NO;
-            circleLabel.text = [_tipsCountArray[i] integerValue]>99?@"99+":[NSString stringWithFormat:@"%@",_tipsCountArray[i]];
-            CGPoint center = circleLabel.center;
-            
-            CGRect cFrame = circleLabel.frame;
-            cFrame.size.width = [self getLabelWidth:circleLabel.text fontSize:12]+6>16?[self getLabelWidth:circleLabel.text fontSize:12]+6:16;
-            
-            circleLabel.frame = cFrame;
-            circleLabel.center = center;
-        }
-        
-        if (_tipsCountShowType == YFViewPagerTipsCountShowTypeRedDot) {
-            CGPoint center = circleLabel.center;
-            CGRect frame = circleLabel.frame;
-            frame.size.width = 6;
-            frame.size.height = 6;
-            circleLabel.frame = frame;
-            circleLabel.text = @"";
-            circleLabel.layer.cornerRadius = 3;
-            circleLabel.center = center;
-        }
-    }
+    [self setNeedsDisplay];
 }
 
 - (void)setTipsCountShowType:(YFViewPagerTipsCountShowType)tipsCountShowType
@@ -390,6 +396,16 @@
 - (NSString *)selectTitle
 {
     return [_titleArray objectAtIndex:self.selectIndex];
+}
+
+#pragma mark - Version 3.1
+- (void)setBottomLineType:(YFViewPagerBottomLineType)bottomLineType
+{
+    if (_bottomLineType != bottomLineType) {
+        _bottomLineType = bottomLineType;
+
+         [self setNeedsDisplay];
+    }
 }
 
 @end

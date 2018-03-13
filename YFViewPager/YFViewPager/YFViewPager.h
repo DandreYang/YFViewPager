@@ -14,6 +14,12 @@ typedef NS_ENUM(NSInteger, YFViewPagerTipsCountShowType) {
     YFViewPagerTipsCountShowTypeRedDot  = 1,    /**< 小红点 */
 };
 
+typedef NS_ENUM(NSInteger, YFViewPagerBottomLineType) {
+    YFViewPagerBottomLineTypeHidden                  = 0,   /**< 不显示，设置此属性后showBottomLine与showSelectedBottomLine属性将失效 */
+    YFViewPagerBottomLineTypeFullItemWidth           = 1,   /**< 与按钮item等宽 */
+    YFViewPagerBottomLineTypeFitItemContentWidth     = 2,   /**< 宽度与按钮item的内容的宽度相同，会自适应 */
+};
+
 typedef void(^SelectedBlock)(id viewPager, NSInteger index);
 
 @interface YFViewPager : UIView<UIScrollViewDelegate>
@@ -37,11 +43,6 @@ typedef void(^SelectedBlock)(id viewPager, NSInteger index);
 @property (nonatomic, strong) UIColor *tabBgColor;
 @property (nonatomic, strong) UIColor *tabSelectedBgColor;
 
-/**
- *  菜单按钮下方横线背景属性
- */
-@property (nonatomic, strong) UIColor *tabArrowBgColor;
-@property (nonatomic, strong) UIColor *tabSelectedArrowBgColor;
 
 /**
  *  菜单按钮的标题颜色属性
@@ -63,6 +64,19 @@ typedef void(^SelectedBlock)(id viewPager, NSInteger index);
  *  选中状态是否显示底部横线  默认显示
  */
 @property (nonatomic, assign) BOOL showSelectedBottomLine;
+
+/**
+ *  菜单按钮下方横线背景属性
+ */
+@property (nonatomic, strong) UIColor *bottomLineBgColor;
+@property (nonatomic, strong) UIColor *bottomLineSelectedBgColor;
+
+#pragma mark - Version 3.1 Add
+
+/**
+ 底部横线的类型
+ */
+@property (nonatomic, assign) YFViewPagerBottomLineType   bottomLineType;
 
 /**
  *  是否显示垂直分割线  默认显示
@@ -118,7 +132,6 @@ typedef void(^SelectedBlock)(id viewPager, NSInteger index);
               icons:(NSArray<UIImage *> *)icons
       selectedIcons:(NSArray<UIImage *> *)selectedIcons
               views:(NSArray *)views;
-
 
 /**
  *  设置菜单标题左边的icon 图标
