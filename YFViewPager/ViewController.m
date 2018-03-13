@@ -12,6 +12,13 @@
 #define kHeight [[UIScreen mainScreen] bounds].size.height
 #define kWidth  [[UIScreen mainScreen] bounds].size.width
 
+#define IS_IPHONE (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+
+#define SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
+#define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
+#define SCREEN_MAX_LENGTH (MAX(SCREEN_WIDTH, SCREEN_HEIGHT))
+#define IS_IPHONE_X (IS_IPHONE && SCREEN_MAX_LENGTH == 812.0)
+
 @interface ViewController ()
 {
     YFViewPager         *_viewPager;
@@ -42,21 +49,20 @@
     [_collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"CollectionViewCell"];
     _collectionView.backgroundColor = [UIColor grayColor];
     
-    NSArray *titles = [[NSArray alloc] initWithObjects:
-                       @" 菜单一",
-                       @" 菜单二",
-                       @" 菜单三", nil];
-    NSArray *icons = [[NSArray alloc] initWithObjects:
-                      [UIImage imageNamed:@"issueTree"],
-                      [UIImage imageNamed:@"hollow_out_star_blue"],
-                      [UIImage imageNamed:@"later_in-tne_chat"], nil];
+    NSArray *titles = @[@"菜单一",
+                        @"菜单二",
+                        @"菜单三"];
+    NSArray *icons = @[[UIImage imageNamed:@"issueTree"],
+                       [UIImage imageNamed:@"hollow_out_star_blue"],
+                       [UIImage imageNamed:@"later_in-tne_chat"]];
 
-    NSArray *views = [[NSArray alloc] initWithObjects:
-                      _tableView,
-                      _collectionView,
-                      _webView, nil];
+    NSArray *views = @[_tableView,
+                       _collectionView,
+                       _webView];
     
-    _viewPager = [[YFViewPager alloc] initWithFrame:CGRectMake(0, 20, kWidth, kHeight - 20)
+    CGFloat y = IS_IPHONE_X?44:20;
+    
+    _viewPager = [[YFViewPager alloc] initWithFrame:CGRectMake(0, y, kWidth, kHeight - y)
                                              titles:titles
                                               icons:icons
                                       selectedIcons:nil
@@ -68,10 +74,10 @@
 //    _viewPager.showAnimation = NO;
 //    _viewPager.showBottomLine = NO;
 //    _viewPager.showVLine = NO;
-//    _viewPager.tabSelectedArrowBgColor = [UIColor redColor];
-//    _viewPager.tabArrowBgColor = [UIColor orangeColor];
+//    _viewPager.bottomLineSelectedBgColor = [UIColor redColor];
+//    _viewPager.bottomLineBgColor = [UIColor orangeColor];
 //    _viewPager.tabBgColor = [UIColor orangeColor];
-//    _viewPager.tabSelectedArrowBgColor = [UIColor brownColor];
+//    _viewPager.bottomLineSelectedBgColor = [UIColor brownColor];
 //    _viewPager.tabSelectedBgColor = [UIColor redColor];
 //    _viewPager.tabSelectedTitleColor = [UIColor blueColor];
 //    _viewPager.tabTitleColor = [UIColor grayColor];
@@ -79,6 +85,9 @@
     
     // 此方法用于给菜单标题右上角小红点赋值，可动态调用
     [_viewPager setTipsCountArray:@[@100,@8,@0]];
+    [_viewPager setTipsCountShowType:YFViewPagerTipsCountShowTypeNumber];
+    
+    [_viewPager setBottomLineType:YFViewPagerBottomLineTypeFitItemContentWidth];
     
     // 点击菜单时触发
     [_viewPager didSelectedBlock:^(id viewPager, NSInteger index) {
