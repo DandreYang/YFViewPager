@@ -64,7 +64,7 @@
     
     _viewPager = [[YFViewPager alloc] initWithFrame:CGRectMake(0, y, kWidth, kHeight - y)
                                              titles:titles
-                                              icons:nil
+                                              icons:icons
                                       selectedIcons:nil
                                               views:views];
     [self.view addSubview:_viewPager];
