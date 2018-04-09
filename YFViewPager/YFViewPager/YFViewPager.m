@@ -365,7 +365,33 @@
 {
     _tipsCountArray = tips;
     
-    [self setNeedsDisplay];
+    for (NSInteger i=0; i<tips.count; i++) {
+        UILabel *circleLabel = [self viewWithTag:0x2016+i];
+        if (_tipsCountArray == nil || _tipsCountArray.count == 0 || [_tipsCountArray[i] integerValue] <= 0) {
+            circleLabel.hidden = YES;
+        }else {
+            circleLabel.hidden = NO;
+            circleLabel.text = [_tipsCountArray[i] integerValue]>99?@"99+":[NSString stringWithFormat:@"%@",_tipsCountArray[i]];
+            CGPoint center = circleLabel.center;
+            
+            CGRect cFrame = circleLabel.frame;
+            cFrame.size.width = [self getLabelWidth:circleLabel.text fontSize:12]+6>16?[self getLabelWidth:circleLabel.text fontSize:12]+6:16;
+            
+            circleLabel.frame = cFrame;
+            circleLabel.center = center;
+        }
+        
+        if (_tipsCountShowType == YFViewPagerTipsCountShowTypeRedDot) {
+            CGPoint center = circleLabel.center;
+            CGRect frame = circleLabel.frame;
+            frame.size.width = 6;
+            frame.size.height = 6;
+            circleLabel.frame = frame;
+            circleLabel.text = @"";
+            circleLabel.layer.cornerRadius = 3;
+            circleLabel.center = center;
+        }
+    }
 }
 
 - (void)setTipsCountShowType:(YFViewPagerTipsCountShowType)tipsCountShowType
