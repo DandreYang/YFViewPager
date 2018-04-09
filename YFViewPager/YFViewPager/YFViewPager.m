@@ -232,14 +232,13 @@
         if (!i) {
             button.selected = YES;
         }
-        if (button.selected) {
-            [UIView animateWithDuration:0.3 animations:^{
-                CGRect sframe = selectedLabel.frame;
-                sframe.origin.x = button.frame.origin.x;
-                selectedLabel.frame = sframe;
-                [button setBackgroundColor:_tabSelectedBgColor];
-            }];
-        }
+//        if (button.selected) {
+//            
+//            [UIView animateWithDuration:0.3 animations:^{
+//                selectedLabel.center = CGPointMake(button.center.x, selectedLabel.center.y);
+//                [button setBackgroundColor:_tabSelectedBgColor];
+//            }];
+//        }
         [button addSubview:circleLabel];
         [_pageControl addSubview:button];
     }

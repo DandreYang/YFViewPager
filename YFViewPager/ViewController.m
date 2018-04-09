@@ -171,7 +171,7 @@
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     [cell.imageView setImage:[UIImage imageNamed:@"my_headportrait"]];
     cell.textLabel.text = [NSString stringWithFormat:@"演示文字-%ld",indexPath.row];
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"v2.0"];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"v3.1"];
     
     return cell;
 }
