@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "YFViewPager"
-  s.version      = "3.1.0"
+  s.version      = "3.1.1"
   s.summary      = "一个类似于安卓ViewPager的开源库 - iOS ViewPager 高级库 支持 iPhone/ipad/ipod."
 # s.description  = <<-DESC
 #                   DESC
