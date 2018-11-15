@@ -251,7 +251,7 @@
     }
     
     if (_enabledScroll) {
-        [_scrollView setContentSize:CGSizeMake(rect.size.width * _views.count + 1, rect.size.height - 2)];
+        [_scrollView setContentSize:CGSizeMake(rect.size.width * _views.count + 1, 0)];
     }else{
         [_scrollView setContentSize:CGSizeZero];
     }
