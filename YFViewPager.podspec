@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.screenshots  = "https://github.com/saxueyang/YFViewPager/raw/master/YFViewPager/yfviewpager.gif", "https://github.com/saxueyang/YFViewPager/raw/master/Screen%20Shot.png"
   s.license      = "MIT"
   s.author             = { "‘Dandre’" => "mkshow@126.com" }
-  s.platform     = :ios, "7.0"
+  s.platform     = :ios, "8.0"
   s.source       = { :git => "https://github.com/DandreYang/YFViewPager.git", :tag => "#{s.version}" }
   s.source_files  = "YFViewPager/YFViewPager/**/*.{h,m}"
   s.public_header_files = "YFViewPager/YFViewPager/**/*.h"
