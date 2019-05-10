@@ -1,5 +1,17 @@
 # YFViewPager
+
+[![Build Status](https://travis-ci.org/DandreYang/YFViewPager.svg?branch=master)](https://travis-ci.org/DandreYang/YFViewPager)
+[![Version](https://img.shields.io/cocoapods/v/YFViewPager.svg?style=flat)](http://cocoapods.org/pods/YFViewPager)
+[![License MIT](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://raw.githubusercontent.com/DandreYang/YFViewPager/master/LICENSE)
+[![Platform](https://img.shields.io/cocoapods/p/YFViewPager.svg?style=flat)](http://cocoapods.org/pods/YFViewPager)
+## 
 一个类似于安卓ViewPager的开源库 - iOS ViewPager 高级库  支持 iPhone/ipad/ipod
+
+## CocoaPods
+```ruby
+pod 'YFViewPager'
+```
+
 <br><br>
 <img src="https://github.com/saxueyang/YFViewPager/blob/master/Screen%20Shot.png?raw=true" width="414">
 <img src="https://github.com/saxueyang/YFViewPager/blob/master/YFViewPager/yfviewpager.gif?raw=true" width="414">
