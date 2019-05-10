@@ -13,8 +13,8 @@ pod 'YFViewPager'
 ```
 
 <br><br>
-<img src="https://github.com/saxueyang/YFViewPager/blob/master/Screen%20Shot.png?raw=true" width="414">
-<img src="https://github.com/saxueyang/YFViewPager/blob/master/YFViewPager/yfviewpager.gif?raw=true" width="414">
+<img src="./Screen%20Shot.png?raw=true" width="414">
+<img src="./YFViewPager/yfviewpager.gif?raw=true" width="414">
 # 相关属性
 ```objc
 /**
@@ -136,3 +136,7 @@ pod 'YFViewPager'
 @property (nonatomic, copy, readonly) NSString *selectTitle;
 @property (nonatomic, assign) YFViewPagerTipsCountShowType  tipsCountShowType;
 ```
+
+## License
+
+YFViewPager is released under the MIT license. See [LICENSE](./LICENSE) for details.
